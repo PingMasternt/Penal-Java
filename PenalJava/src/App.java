@@ -3,14 +3,14 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args){
+        
         Logo();
 
 
     }
 
-
-
-
+    public static int[] select = new int[7];
+    public static int d20;
 
     public static void Logo(){
         System.out.println(" _______                                __                      ");
@@ -33,5 +33,8 @@ public class App {
         System.out.println("                         $$$$$$|   $$$$$$$|     $|     $$$$$$$| ");
     }
 
+    public static void menuPrincipal(){
+        System.out.println("");
+    }
 
 }
