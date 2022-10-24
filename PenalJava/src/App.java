@@ -3,9 +3,11 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args){
-        
-        Logo();//Llamada a la funcion "Logo"
-        menuPrincipal();//LLamada a la funcion "menuPrincipal"
+        select[0] = 0;
+        do {
+            Logo();//Llamada a la funcion "Logo"
+            menuPrincipal();//LLamada a la funcion "menuPrincipal"
+        } while (select[0] != 2);
 
     }
 
@@ -46,8 +48,32 @@ public class App {
             break;
         }
     }
-    public static void seleccionModalidad(){
-        
+    public static void seleccionModalidad(){//Menu diseñado para 
+        Scanner input = new Scanner(System.in);
+        for(int i = 0; i <= 20; i++){
+            System.out.println(" ");
+        }
+        System.out.println("Seleccione el Modo de Juego \n       1) Un jugador \n       2) Multijugador \n       3) Atras");
+        select[1] = input.nextInt();
+        switch(select[1]){
+            case 1:
+            unJugador();
+            break;
+
+            case 2:
+            multijugador();
+            break;
+
+            default:
+            break;
+        }
     }
 
+    public static void unJugador(){
+
+    }
+
+    public static void multijugador(){
+
+    }
 }
