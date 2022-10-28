@@ -11,8 +11,12 @@ public class App {
 
     }
 
+    public static Scanner input = new Scanner(System.in);//Crea un metodo de entrada para el usuario
     public static int[] select = new int[7];//Variable utilizada para interactuar con los menus.
     public static int d20;
+    public static int Equipo;
+    public static int Equipo1, Equipo2;
+
 
     public static void Logo(){//Utilizado para mostrar arte ascii
         System.out.println(" _______                                __                      ");
@@ -36,7 +40,6 @@ public class App {
     }
 
     public static void menuPrincipal(){//Menu principal
-        Scanner input = new Scanner(System.in);//Crea un metodo de entrada para el usuario
         System.out.println("Presione 1) Para empezar \n         2) Para salir");
         select[0] = input.nextInt();// Asigna un valor al Array Publico select
         switch(select[0]){
@@ -48,8 +51,7 @@ public class App {
             break;
         }
     }
-    public static void seleccionModalidad(){//Menu diseñado para 
-        Scanner input = new Scanner(System.in);
+    public static void seleccionModalidad(){//Menu diseñado para seleccionar el modo de juego
         for(int i = 0; i <= 20; i++){
             System.out.println(" ");
         }
@@ -69,11 +71,19 @@ public class App {
         }
     }
 
+    public static void seleccionDeEquipo(){
+
+    }
+
     public static void unJugador(){
+        
 
     }
 
     public static void multijugador(){
+        
 
     }
+
+    
 }
