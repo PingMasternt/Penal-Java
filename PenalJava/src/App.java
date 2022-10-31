@@ -19,7 +19,6 @@ public class App {
     public static int Equipo1, Equipo2;
     public static int PuntuacionJ1;//Almacena la puntuacion del jugador 1
     public static int PuntuacionJ2;//Almacena la puntuacion del jugador 2
-    public static int r = rand.nextInt(10);
 
 
     public static void Logo(){//Utilizado para mostrar arte ascii
@@ -120,6 +119,7 @@ public class App {
     }
 
     public static void gameJ1(){//Logica del juego
+        int r = rand.nextInt(10);
         System.out.println("Elige a donde patear la pelota");
         arco();
         select[2] = input.nextInt();
@@ -191,9 +191,10 @@ public class App {
     }
     
     public static void gameJ2(){//Logica del juego
-         System.out.println("Elige a donde patear la pelota");
-         arco();
-         select[2] = input.nextInt();
+        int r = rand.nextInt(10);
+        System.out.println("Elige a donde patear la pelota");
+        arco();
+        select[2] = input.nextInt();
         switch(select[2]){
              case 1:
             if(r >= 3){
