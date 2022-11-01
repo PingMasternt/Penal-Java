@@ -91,9 +91,7 @@ public class App {
         cls();
         seleccionDeEquipo();
         cls();
-        for(int i = 0; i < 5; i++){
-            
-        }
+        Juego1();
         cls();
         System.out.println("La puntuacion del Jugador 1 es " + PuntuacionJ1);
         pause(3000);
@@ -103,12 +101,7 @@ public class App {
     public static void multijugador(){
         cls();
         seleccionDeEquipo();
-        for(int i = 0; i < 5; i++){
-            
-        }
-        for(int i = 0; i < 5; i++){
-            
-        }
+        Juego2();
         System.out.println("La puntuacion del Jugador 1 es " + PuntuacionJ1);
         pause(1500);
         System.out.println("La puntuacion del Jugador 2 es " + PuntuacionJ2);
@@ -122,13 +115,15 @@ public class App {
     }
 
     public static void Juego1(){
-        for(int i = 0; i < 10; i++){
-            arquero[i] = rand.nextInt(1-9);
+        for(int i = 0; i < 5; i++){
+            arquero[i] = rand.nextInt(9 - 1 + 1) + 1;
+            System.out.println(arquero[i]);
         }
-        for(int i = 0; i < 10; i++){
+        for(int f = 0; f < 5; f++){
             System.out.println("J1 Patea la pelota");
             arco();
-            if(select[2] != arquero[i]){
+            select[2] = input.nextInt();
+            if(select[2] != arquero[f]){
                 gol();
                 PuntuacionJ1++;
             }else{
@@ -139,16 +134,26 @@ public class App {
 
     public static void Juego2(){
         for(int i = 0; i < 10; i++){
-            arquero[i] = rand.nextInt(1-9);
+            arquero[i] = rand.nextInt(9 - 1 + 1) + 1;
         }
-        for(int i = 0; i < 10; i++){
-            if(select[2] != arquero[i]){
+        for(int f = 0; f < 10; f++){
+            System.out.println("J1 Patea la pelota");
+            arco();
+            select[2] = input.nextInt();
+            if(select[2] != arquero[f]){
                 gol();
                 PuntuacionJ1++;
             }else{
                 System.out.println("Fallastes");
             }
-
+            System.out.println("J2 Patea la pelota");
+            arco();
+            if(select[2] != arquero[f]){
+                gol();
+                PuntuacionJ2++;
+            }else{
+                System.out.println("Fallastes");
+            }
         }
     }
 
