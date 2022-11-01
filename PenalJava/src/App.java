@@ -15,7 +15,7 @@ public class App {
     public static Random rand = new Random();
     public static Scanner input = new Scanner(System.in);//Crea un metodo de entrada para el usuario
     public static int[] select = new int[7];//Variable utilizada para interactuar con los menus.
-    public static int d20;
+    public static int[] arquero = new int[10];
     public static int Equipo1, Equipo2;
     public static int PuntuacionJ1;//Almacena la puntuacion del jugador 1
     public static int PuntuacionJ2;//Almacena la puntuacion del jugador 2
@@ -77,7 +77,7 @@ public class App {
     public static void seleccionDeEquipo(){//Menu de Seleccion de equipos
         for(int i = select[1]; i > 0; i--){
             cls();
-            System.out.println("Seleccione un equipo Jugador " + i + " \n 1)Argentina \n 2)Australia \n 3)Arabia Saudita \n 4)Belgica \n 5)Canada \n 6)Costa Rica \n 7)Brazil \n 8)España \n 9)Uruguay \n 10)Mexico");
+            System.out.println("Seleccione un equipo Jugador " + i + " \n 1)Argentina \n 2)Australia \n 3)Arabia Saudita \n 4)Belgica \n 5)Canada \n 6)Costa Rica \n 7)Brazil \n 8)Paris \n 9)Uruguay \n 10)Mexico");
             if(i == 2){
                 Equipo1 = input.nextInt();
             }else{
@@ -92,7 +92,7 @@ public class App {
         seleccionDeEquipo();
         cls();
         for(int i = 0; i < 5; i++){
-            gameJ1();
+            
         }
         cls();
         System.out.println("La puntuacion del Jugador 1 es " + PuntuacionJ1);
@@ -104,28 +104,63 @@ public class App {
         cls();
         seleccionDeEquipo();
         for(int i = 0; i < 5; i++){
-            gameJ1();
+            
         }
         for(int i = 0; i < 5; i++){
-            gameJ2();
+            
         }
         System.out.println("La puntuacion del Jugador 1 es " + PuntuacionJ1);
+        pause(1500);
         System.out.println("La puntuacion del Jugador 2 es " + PuntuacionJ2);
+        pause(1500);
         if(PuntuacionJ1 > PuntuacionJ2){
             System.out.println("Gana El jugador 1");
         }else{
             System.out.println("Gana El jugador 2");
         }
+        pause(3000);
     }
 
-    public static void gameJ1(){//Logica del juego
+    public static void Juego1(){
+        for(int i = 0; i < 10; i++){
+            arquero[i] = rand.nextInt(1-9);
+        }
+        for(int i = 0; i < 10; i++){
+            System.out.println("J1 Patea la pelota");
+            arco();
+            if(select[2] != arquero[i]){
+                gol();
+                PuntuacionJ1++;
+            }else{
+                System.out.println("Fallastes");
+            }
+        }
+    }
+
+    public static void Juego2(){
+        for(int i = 0; i < 10; i++){
+            arquero[i] = rand.nextInt(1-9);
+        }
+        for(int i = 0; i < 10; i++){
+            if(select[2] != arquero[i]){
+                gol();
+                PuntuacionJ1++;
+            }else{
+                System.out.println("Fallastes");
+            }
+
+        }
+    }
+
+    /*public static void gameJ1(){//Logica del juego
         int r = rand.nextInt(10);
-        System.out.println("Elige a donde patear la pelota");
+        System.out.println("Elige a donde patear la pelota Jugador 1");
         arco();
         select[2] = input.nextInt();
         switch(select[2]){
             case 1:
             if(r >= 3){
+                gol();
                 PuntuacionJ1 = PuntuacionJ1 + 1;
             }else{
                 System.out.println("Fallastes");
@@ -133,6 +168,7 @@ public class App {
             break;
             case 2:
             if(r >= 4){
+                gol();
                 PuntuacionJ1 = PuntuacionJ1 + 1;
             }else{
                 System.out.println("Fallastes");
@@ -140,6 +176,7 @@ public class App {
             break;
             case 3:
             if(r >= 3){
+                gol();
                 PuntuacionJ1 = PuntuacionJ1 + 1;
             }else{
                 System.out.println("Fallastes");
@@ -147,6 +184,7 @@ public class App {
             break;
             case 4:
             if(r >= 4){
+                gol();
                 PuntuacionJ1 = PuntuacionJ1 + 1;
             }else{
                 System.out.println("Fallastes");
@@ -154,6 +192,7 @@ public class App {
             break;
             case 5:
             if(r >= 5){
+                gol();
                 PuntuacionJ1 = PuntuacionJ1 + 1;
             }else{
                 System.out.println("Fallastes");
@@ -161,6 +200,7 @@ public class App {
             break;
             case 6:
             if(r >= 4){
+                gol();
                 PuntuacionJ1 = PuntuacionJ1 + 1;
             }else{
                 System.out.println("Fallastes");
@@ -168,6 +208,7 @@ public class App {
             break;
             case 7:
             if(r >= 3){
+                gol();
                 PuntuacionJ1 = PuntuacionJ1 + 1;
             }else{
                 System.out.println("Fallastes");
@@ -175,6 +216,7 @@ public class App {
             break;
             case 8:
             if(r >= 5){
+                gol();
                 PuntuacionJ1 = PuntuacionJ1 + 1;
             }else{
                 System.out.println("Fallastes");
@@ -182,6 +224,7 @@ public class App {
             break;
             case 9:
             if(r >= 3){
+                gol();
                 PuntuacionJ1 = PuntuacionJ1 + 1;
             }else{
                 System.out.println("Fallastes");
@@ -192,12 +235,13 @@ public class App {
     
     public static void gameJ2(){//Logica del juego
         int r = rand.nextInt(10);
-        System.out.println("Elige a donde patear la pelota");
+        System.out.println("Elige a donde patear la pelota Jugador 2");
         arco();
         select[2] = input.nextInt();
         switch(select[2]){
              case 1:
             if(r >= 3){
+                gol();
                 PuntuacionJ2 = PuntuacionJ2 + 1;
             }else{
                     System.out.println("Fallastes");
@@ -205,6 +249,7 @@ public class App {
                 break;
                 case 2:
                 if(r >= 4){
+                    gol();
                     PuntuacionJ2 = PuntuacionJ2 + 1;
                 }else{
                     System.out.println("Fallastes");
@@ -212,6 +257,7 @@ public class App {
                 break;
                 case 3:
                 if(r >= 3){
+                    gol();
                     PuntuacionJ2 = PuntuacionJ2 + 1;
                 }else{
                     System.out.println("Fallastes");
@@ -219,6 +265,7 @@ public class App {
                 break;
                 case 4:
                 if(r >= 4){
+                    gol();
                     PuntuacionJ2 = PuntuacionJ2 + 1;
                 }else{
                     System.out.println("Fallastes");
@@ -226,6 +273,7 @@ public class App {
                 break;
                 case 5:
                 if(r >= 5){
+                    gol();
                     PuntuacionJ2 = PuntuacionJ2 + 1;
                 }else{
                     System.out.println("Fallastes");
@@ -240,6 +288,7 @@ public class App {
                 break;
                 case 7:
                 if(r >= 3){
+                    gol();
                     PuntuacionJ2 = PuntuacionJ2 + 1;
                 }else{
                     System.out.println("Fallastes");
@@ -247,6 +296,7 @@ public class App {
                 break;
                 case 8:
                 if(r >= 5){
+                    gol();
                     PuntuacionJ2 = PuntuacionJ2 + 1;
                 }else{
                     System.out.println("Fallastes");
@@ -254,6 +304,7 @@ public class App {
                 break;
                 case 9:
                 if(r >= 3){
+                    gol();
                     PuntuacionJ2 = PuntuacionJ2 + 1;
                 }else{
                     System.out.println("Fallastes");
@@ -261,7 +312,7 @@ public class App {
                 break;
     
             }
-        }
+        }*/
     
 
     public static void cls(){
@@ -283,5 +334,23 @@ public class App {
         System.out.println("|1  2  3|");
         System.out.println("|4  5  6|");
         System.out.println("|7  8  9|");
+    }
+    public static void gol(){
+        System.out.println("                                           ,--,    ");
+        System.out.println("                ,----..       ,----..   ,---.'|    ");
+        System.out.println("  ,----..      /   /   |     /   /   |  |   | :    ");
+        System.out.println(" /   /   |    /   .     :   /   .     : :   : |    ");
+        System.out.println("|   :     :  .   /   ;.  | .   /   ;.  ||   ' :    ");
+        System.out.println(".   |  ;. / .   ;   /  ` ;.   ;   /  ` ;;   ; '    ");
+        System.out.println(".   ; /--`  ;   |  ; | ; |;   |  ; | ; |'   | |__  ");
+        System.out.println(";   | ;  __ |   :  | ; | '|   :  | ; | '|   | :.'| ");
+        System.out.println("|   : |.' .'.   |  ' ' ' :.   |  ' ' ' :'   :    ; ");
+        System.out.println(".   | '_.' :'   ;  |; /  |'   ;  |; /  ||   |  ./  ");
+        System.out.println("'   ; : |  | |   |  ',  /  |   |  ',  / ;   : ;    ");
+        System.out.println("'   | '/  .'  ;   :    /    ;   :    /  |   ,/     ");
+        System.out.println("|   :    /     |   | .'      |   | .'   '---'      ");
+        System.out.println(" |   | .'       `---`         `---`                ");
+        System.out.println("  `---`                                            ");
+        pause(3000);
     }
 }
