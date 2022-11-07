@@ -117,7 +117,6 @@ public class App {
     public static void Juego1(){
         for(int i = 0; i < 5; i++){
             arquero[i] = rand.nextInt(9 - 1 + 1) + 1;
-            System.out.println(arquero[i]);
         }
         for(int f = 0; f < 5; f++){
             System.out.println("J1 Patea la pelota");
@@ -127,7 +126,9 @@ public class App {
                 gol();
                 PuntuacionJ1++;
             }else{
+                cls();
                 System.out.println("Fallastes");
+                pause(1000);
             }
         }
     }
@@ -152,7 +153,9 @@ public class App {
                 gol();
                 PuntuacionJ2++;
             }else{
+                cls();
                 System.out.println("Fallastes");
+                pause(1000);
             }
         }
     }
