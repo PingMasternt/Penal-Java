@@ -149,7 +149,8 @@ public class App {
             }
             System.out.println("J2 Patea la pelota");
             arco();
-            if(select[2] != arquero[f]){
+            select[3] = input.nextInt();
+            if(select[3] != arquero[f]){
                 gol();
                 PuntuacionJ2++;
             }else{
