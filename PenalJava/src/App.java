@@ -41,7 +41,6 @@ public class App {
         System.out.println("                        $$    $$| $$    $$ |   $$$|   $$    $$ |");
         System.out.println("                         $$$$$$|   $$$$$$$|     $|     $$$$$$$| ");
     }
-
     public static void menuPrincipal(){//Menu principal
         System.out.println("Presione 1) Para empezar \n         2) Para salir");
         select[0] = input.nextInt();// Asigna un valor al Array Publico select
@@ -73,7 +72,6 @@ public class App {
             break;
         }
     }
-
     public static void seleccionDeEquipo(){//Menu de Seleccion de equipos
         for(int i = select[1]; i > 0; i--){
             cls();
@@ -86,7 +84,6 @@ public class App {
         }
         
     }
-
     public static void unJugador(){
         cls();
         seleccionDeEquipo();
@@ -97,7 +94,6 @@ public class App {
         pause(3000);
         PuntuacionJ1 = 0;
     }
-
     public static void multijugador(){
         cls();
         seleccionDeEquipo();
@@ -109,11 +105,14 @@ public class App {
         if(PuntuacionJ1 > PuntuacionJ2){
             System.out.println("Gana El jugador 1");
         }else{
-            System.out.println("Gana El jugador 2");
+            if(PuntuacionJ1 == PuntuacionJ2){
+                desempate();
+            }else{
+                System.out.println("Gana El jugador 2");
+            }
         }
         pause(3000);
     }
-
     public static void Juego1(){
         for(int i = 0; i < 5; i++){
             arquero[i] = rand.nextInt(9 - 1 + 1) + 1;
@@ -132,7 +131,6 @@ public class App {
             }
         }
     }
-
     public static void Juego2(){
         for(int i = 0; i < 10; i++){
             arquero[i] = rand.nextInt(9 - 1 + 1) + 1;
@@ -160,13 +158,11 @@ public class App {
             }
         }
     }
-
     public static void cls(){
         for(int i = 0; i <= 20; i++){
             System.out.println(" ");
         }
     }
-    
     public static void pause(int a){
         try {
             Thread.sleep(a);
@@ -174,7 +170,6 @@ public class App {
             e.printStackTrace();
         }
     }
-
     public static void arco(){
         System.out.println(" _______ ");
         System.out.println("|1  2  3|");
@@ -198,5 +193,25 @@ public class App {
         System.out.println(" |   | .'       `---`         `---`                ");
         System.out.println("  `---`                                            ");
         pause(3000);
+    }
+    public static void desempate(){
+        while(PuntuacionJ1 == PuntuacionJ2){
+            for(int i = 0; i < 3; i++){
+                arquero[i] = rand.nextInt(9 - 1 + 1) + 1;
+            }
+            for(int f = 0; f < 5; f++){
+                System.out.println("J1 Patea la pelota");
+                arco();
+                select[2] = input.nextInt();
+                if(select[2] != arquero[f]){
+                    gol();
+                    PuntuacionJ1++;
+                }else{
+                    cls();
+                    System.out.println("Fallastes");
+                    pause(1000);
+                }
+            }
+        }
     }
 }
