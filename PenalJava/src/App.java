@@ -106,6 +106,7 @@ public class App {
             System.out.println("Gana El jugador 1");
         }else{
             if(PuntuacionJ1 == PuntuacionJ2){
+                System.out.println("Ambos empatan. Empieza el desempate");
                 desempate();
             }else{
                 System.out.println("Gana El jugador 2");
