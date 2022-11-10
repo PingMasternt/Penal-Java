@@ -122,13 +122,18 @@ public class App {
             System.out.println("J1 Patea la pelota");
             arco();
             select[2] = input.nextInt();
-            if(select[2] != arquero[f]){
-                gol();
-                PuntuacionJ1++;
+            if(select[2] > 9){
+                System.out.println("Fallastes, Pierdes un punto");
+                PuntuacionJ1--;
             }else{
-                cls();
-                System.out.println("Fallastes");
-                pause(1000);
+                if(select[2] != arquero[f]){
+                    gol();
+                    PuntuacionJ1++;
+                }else{
+                    cls();
+                    System.out.println("Fallastes");
+                    pause(1000);
+                }
             }
         }
     }
@@ -140,22 +145,34 @@ public class App {
             System.out.println("J1 Patea la pelota");
             arco();
             select[2] = input.nextInt();
-            if(select[2] != arquero[f]){
-                gol();
-                PuntuacionJ1++;
+            if(select[2] > 9){
+                System.out.println("Fallastes, Pierdes un punto");
+                PuntuacionJ1--;
             }else{
-                System.out.println("Fallastes");
+                if(select[2] != arquero[f]){
+                    gol();
+                    PuntuacionJ1++;
+                }else{
+                    cls();
+                    System.out.println("Fallastes");
+                    pause(1000);
+                }
             }
             System.out.println("J2 Patea la pelota");
             arco();
             select[3] = input.nextInt();
-            if(select[3] != arquero[f]){
-                gol();
-                PuntuacionJ2++;
+            if(select[3] > 9){
+                System.out.println("Fallastes, Pierdes un punto");
+                PuntuacionJ2--;
             }else{
-                cls();
-                System.out.println("Fallastes");
-                pause(1000);
+                if(select[3] != arquero[f]){
+                    gol();
+                    PuntuacionJ2++;
+                }else{
+                    cls();
+                    System.out.println("Fallastes");
+                    pause(1000);
+                }
             }
         }
     }
