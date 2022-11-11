@@ -141,7 +141,7 @@ public class App {
         for(int i = 0; i < 5; i++){
             arquero[i] = rand.nextInt(9 - 1 + 1) + 1;
         }
-        for(int f = 0; f < 10; f++){
+        for(int f = 0; f < 5; f++){
             System.out.println("J1 Patea la pelota");
             arco();
             select[2] = input.nextInt();
