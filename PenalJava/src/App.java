@@ -138,7 +138,7 @@ public class App {
         }
     }
     public static void Juego2(){
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < 5; i++){
             arquero[i] = rand.nextInt(9 - 1 + 1) + 1;
         }
         for(int f = 0; f < 10; f++){
@@ -210,7 +210,7 @@ public class App {
         System.out.println("|   :    /     |   | .'      |   | .'   '---'      ");
         System.out.println(" |   | .'       `---`         `---`                ");
         System.out.println("  `---`                                            ");
-        pause(3000);
+        pause(1500);
     }
     public static void desempate(){
         while(PuntuacionJ1 == PuntuacionJ2){
