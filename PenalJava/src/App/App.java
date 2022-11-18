@@ -1,5 +1,7 @@
+package App;
 import java.util.Random;
 import java.util.Scanner;
+
 
 public class App {
     public static void main(String[] args){
@@ -19,6 +21,10 @@ public class App {
     public static int PuntuacionJ1;//Almacena la puntuacion del jugador 1
     public static int PuntuacionJ2;//Almacena la puntuacion del jugador 2
     public static String nameJ1 = "Jugador 1", nameJ2 = "Jugador 2";
+    
+
+    
+    
 
     public static void Logo(){//Utilizado para mostrar arte ascii
         System.out.println(" _______                                __                      ");
@@ -438,6 +444,10 @@ public class App {
                     break;
                 case 4:
                 
+                break;
+
+                case 5:
+
                 break;
             }
         }while(select[4] != 4);
