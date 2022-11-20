@@ -169,7 +169,7 @@ public class App {
             }
             for(int f = 0; f < 5; f++){
                 System.out.println("J1 Patea la pelota");
-                arcoEasy();
+                arcoHard();
                 select[2] = input.nextInt();
                 if(select[2] > 4){
                     System.out.println("Fallastes, Pierdes un punto");
@@ -185,7 +185,7 @@ public class App {
                     }
                 }
                 System.out.println("J2 Patea la pelota");
-                arcoEasy();
+                arcoHard();
                 select[3] = input.nextInt();
                 if(select[3] > 4){
                     System.out.println("Fallastes, Pierdes un punto");
@@ -210,7 +210,7 @@ public class App {
             }
             for(int f = 0; f < 5; f++){
                 System.out.println("J1 Patea la pelota");
-                arcoHard();
+                arcoNormal();
                 select[2] = input.nextInt();
                 if(select[2] > 6){
                     System.out.println("Fallastes, Pierdes un punto");
@@ -232,7 +232,7 @@ public class App {
             }
             for(int f = 0; f < 5; f++){
                 System.out.println("J1 Patea la pelota");
-                arcoEasy();
+                arcoNormal();
                 select[2] = input.nextInt();
                 if(select[2] > 6){
                     System.out.println("Fallastes, Pierdes un punto");
@@ -248,7 +248,7 @@ public class App {
                     }
                 }
                 System.out.println("J2 Patea la pelota");
-                arcoEasy();
+                arcoNormal();
                 select[3] = input.nextInt();
                 if(select[3] > 6){
                     System.out.println("Fallastes, Pierdes un punto");
@@ -273,7 +273,7 @@ public class App {
             }
             for(int f = 0; f < 5; f++){
                 System.out.println("J1 Patea la pelota");
-                arcoHard();
+                arcoEasy();
                 select[2] = input.nextInt();
                 if(select[2] > 9){
                     System.out.println("Fallastes, Pierdes un punto");
@@ -348,7 +348,7 @@ public class App {
                            +"|  |7___8___9__|__|\n" 
                            +"|,'            |,'");
     }
-    public static void acroNormal(){
+    public static void arcoNormal(){
         System.out.println("  ______________ \n" 
                            +"|':.1__2___3___|Z:.\n"
                            +"|  |           |  |\n"
@@ -443,13 +443,43 @@ public class App {
                     }
                     break;
                 case 4:
-                
+                cls();
+                System.out.println("         Creditos          ");
+                pause(1000);
+                for(int i = 0; i <= 5; i++){
+                    System.out.println(" ");
+                }
+                pause(1000);
+                System.out.println("            Programadores:            ");
+                pause(1000);
+                System.out.println("Programador Principal: Federico Roviglio");
+                pause(1000);
+                System.out.println(" Programador Secundario: Andrew Candia  ");
+                pause(1000);
+                for(int i = 0; i <= 5; i++){
+                    System.out.println(" ");
+                }
+                pause(1000);
+                System.out.println("            Documentacion:          ");
+                pause(1000);
+                System.out.println("  Escritor principal: Andrew Candia  ");
+                pause(1000);
+                System.out.println("  Escritor Secundario: Lucas Gomez   ");
+                pause(1000);
+                System.out.println("    Comentarios: Federico Roviglo    ");
+                pause(1000);
+                for(int i = 0; i <= 5; i++){
+                    System.out.println(" ");
+                }
+                pause(1000);
+                System.out.println("               Icono:                  ");
+                pause(1000);
+                System.out.println("             Lucas Gomez             ");
+                pause(1000);
+                select[4] = 5;
                 break;
 
-                case 5:
-
-                break;
             }
-        }while(select[4] != 4);
+        }while(select[4] != 5);
     }
 }
